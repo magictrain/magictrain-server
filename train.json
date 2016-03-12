@@ -14,7 +14,8 @@
             "type": "BT IC2000",
             "klass": 2,
             "decks": 2,
-            "is_locomotive": false
+            "is_locomotive": false,
+            "length": 26.4
           },
           {
             "_id": "1feafd6b431c64e55c4b07c77d0a7d93",
@@ -23,7 +24,8 @@
             "type": "B IC2000",
             "klass": 2,
             "decks": 2,
-            "is_locomotive": false
+            "is_locomotive": false,
+            "length": 26.4
           },
           {
             "_id": "01198aa3ec67c3cb5a09732d83f30fbc",
@@ -32,7 +34,8 @@
             "type": "B IC2000",
             "klass": 2,
             "decks": 2,
-            "is_locomotive": false
+            "is_locomotive": false,
+            "length": 26.4
           },
           {
             "_id": "8fddb3927b10169722c1ee09750b859d",
@@ -63,7 +66,8 @@
                 "uuid": "FB:6A:9C:C1:71:CA",
                 "offset": 26.4
               }
-            ]
+            ],
+            "length": 26.4
           },
           {
             "_id": "1feafd6b431c64e55c4b07c77d103113",
@@ -72,7 +76,8 @@
             "type": "B IC2000",
             "klass": 2,
             "decks": 2,
-            "is_locomotive": false
+            "is_locomotive": false,
+            "length": 26.4
           },
           {
             "_id": "8fddb3927b10169722c1ee09750f3dc9",
@@ -81,7 +86,8 @@
             "type": "B IC2000",
             "klass": 2,
             "decks": 2,
-            "is_locomotive": false
+            "is_locomotive": false,
+            "length": 26.4
           },
           {
             "_id": "01198aa3ec67c3cb5a09732d83f8139d",
@@ -90,7 +96,8 @@
             "type": "B IC2000",
             "klass": 2,
             "decks": 2,
-            "is_locomotive": false
+            "is_locomotive": false,
+            "length": 26.4
           },
           {
             "_id": "1feafd6b431c64e55c4b07c77d14bea2",
@@ -99,7 +106,8 @@
             "type": "WRB IC2000",
             "klass": 1,
             "decks": 2,
-            "is_locomotive": false
+            "is_locomotive": false,
+            "length": 26.4
           },
           {
             "_id": "1feafd6b431c64e55c4b07c77d19db8f",
@@ -108,7 +116,8 @@
             "type": "A IC2000",
             "klass": 1,
             "decks": 2,
-            "is_locomotive": false
+            "is_locomotive": false,
+            "length": 26.4
           },
           {
             "_id": "01198aa3ec67c3cb5a09732d83fd7c4b",
@@ -117,7 +126,8 @@
             "type": "A IC2000",
             "klass": 1,
             "decks": 2,
-            "is_locomotive": false
+            "is_locomotive": false,
+            "length": 26.4
           },
           {
             "_id": "8fddb3927b10169722c1ee0975158e00",
@@ -126,7 +136,8 @@
             "type": "A IC2000",
             "klass": 1,
             "decks": 2,
-            "is_locomotive": false
+            "is_locomotive": false,
+            "length": 26.4
           },
           {
             "_id": "8fddb3927b10169722c1ee09751974a9",
@@ -135,7 +146,8 @@
             "type": "AD IC2000",
             "klass": 1,
             "decks": 2,
-            "is_locomotive": false
+            "is_locomotive": false,
+            "length": 26.4
           },
           {
             "_id": "373f83d9960693ac210d3e34cb017dee",
@@ -144,7 +156,8 @@
             "type": "Re 460",
             "klass": 0,
             "decks": 1,
-            "is_locomotive": true
+            "is_locomotive": true,
+            "length": 18.5
           }
         ]
 }
