@@ -68,54 +68,72 @@ app.post('/push', function(req, res) {
 	var fb_name = req.body['fb_name']
 	console.log("request from user with id: " + fb_id)
 
+	console.log(req.body)
+
 	beacons = req.body.beacons
 	// sort beacons based on proximity
-	beacons.sort(function(a,b) {return a.proximity_m < b.proximity_m})
+	beacons.sort(function(a,b) {return a.proximity_m > b.proximity_m})
 
-	bestBeacon = beacons[0]
-	secondBeacon = beacons[1]
 
 	// find the carriage
 	var carriage = null
-	var bestInstalled = null
-	var secondInstalled = null
-	train.carriages.forEach(function(currentCarriage) {
-		if(currentCarriage.beacons != null) {
-			currentCarriage.beacons.forEach(function(beacon) {
-				if(bestBeacon.uuid == beacon.uuid) {
-					carriage = currentCarriage
-					bestInstalled = beacon
-				}
-				if(secondBeacon.uuid == beacon.uuid) {
-					secondInstalled = beacon
-				}
-			})
-		}
-	})
+	for(var i=0; i<beacons.length && carriage == null; i++) {
 
-	var offset = 0
-	if(bestInstalled != null) {
-		offset = bestInstalled.offset
-	}
+		train.carriages.forEach(function(currentCarriage) {
+			if(currentCarriage.beacons != null) {
+				currentCarriage.beacons.forEach(function(installedBeacon) {
+					console.log("installed")
+					console.log(installedBeacon)
 
-	if(bestInstalled != null && secondInstalled != null) {
-		offset = (bestInstalled.offset+secondInstalled.offset)/2
-	}
+					console.log("sent")
+					console.log(beacons[i])
 
-
-	// upsert into db
-	tools.upsert(positionsDB, fb_id, function() {
-		return {
-			_id: fb_id,
-			fb_name: fb_name,
-			location: {
-				carriage_id: carriage.id,
-				offset: offset,
-				deck: 1
+					if(installedBeacon.uuid == beacons[i].uuid) {
+						console.log('matched beacon:')
+						console.log(installedBeacon)
+						carriage = currentCarriage
+						offset = installedBeacon.offset
+					}
+				})
 			}
-		}
+		})
+	}
 
-	}, function(err, result){})
+
+
+	// no longer in reception, delete entry and return
+	if(carriage == null || beacons.length == 0) {
+		positionsDB.find({"selector": {"_id":fb_id.toString()}}, function(err, result) {
+			var doc = result.docs[0]
+			if(doc != null) {
+				positionsDB.destroy(fb_id.toString(), doc._rev, function(err, body, header){})
+			}
+			res.send({train: null})
+
+		})
+		return
+		
+	}
+	
+
+	if(fb_id != null && carriage != null && offset != null && fb_name != null) {
+		// upsert into db
+		tools.upsert(positionsDB, fb_id.toString(), function() {
+			return {
+				_id: fb_id.toString(),
+				fb_name: fb_name,
+				location: {
+					carriage_id: carriage.id,
+					offset: offset,
+					deck: 1
+				}
+			}
+
+		}, function(err, result){})
+	}
+	else {
+		console.log("FAIL. DID not insert into DB")
+	}
 
 	positionsDB.find({"selector": {"_id": {"$gt":0}}}, function(err, result) {
 		var friends = result.docs
