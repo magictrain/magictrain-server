@@ -47,24 +47,20 @@
             "is_locomotive": false,
             "beacons": [
               {
-                "uuid": "E7:0D:90:B4:F6:00",
-                "offset": 0
-              },
-              {
-                "uuid": "E9:BD:78:C7:02:01",
-                "offset": 6.6
-              },
-              {
-                "uuid": "E9:1E:5A:A3:F0:56",
-                "offset": 13.2
-              },
-              {
-                "uuid": "CC:14:78:0B:FD:3E",
-                "offset": 19.4
+                "uuid": "C7:4C:04:29:2F:14",
+                "offset": 5.28
               },
               {
                 "uuid": "FB:6A:9C:C1:71:CA",
-                "offset": 26.4
+                "offset": 10.56
+              },
+              {
+                "uuid": "CC:14:78:0B:FD:3E",
+                "offset": 15.84
+              },
+              {
+                "uuid": "E9:1E:5A:A3:F0:56",
+                "offset": 21.12
               }
             ],
             "length": 26.4
@@ -77,6 +73,24 @@
             "klass": 2,
             "decks": 2,
             "is_locomotive": false,
+						"beacons": [
+              {
+                "uuid": "E7:0D:90:B4:F6:00",
+                "offset": 5.28
+              },
+              {
+                "uuid": "E9:1E:5A:A3:F0:56",
+                "offset": 10.56
+              },
+              {
+                "uuid": "E7:F0:EE:EA:38:D3",
+                "offset": 15.84
+              },
+              {
+                "uuid": "E9:BD:78:C7:02:01",
+                "offset": 21.12
+              }
+            ],
             "length": 26.4
           },
           {
