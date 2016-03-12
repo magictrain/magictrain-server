@@ -63,9 +63,9 @@ app.post('/dummy', function(req, res) {
 })
 
 
-
 app.post('/push', function(req, res) {
-	fb_id = req.body['fb_id']
+	var fb_id = req.body['fb_id']
+	var fb_name = req.body['fb_name']
 	console.log("request from user with id: " + fb_id)
 
 	beacons = req.body.beacons
@@ -73,28 +73,60 @@ app.post('/push', function(req, res) {
 	beacons.sort(function(a,b) {return a.proximity_m < b.proximity_m})
 
 	bestBeacon = beacons[0]
-	secondBeacon = beacon[1]
-
+	secondBeacon = beacons[1]
 
 	// find the carriage
 	var carriage = null
+	var bestInstalled = null
+	var secondInstalled = null
 	train.carriages.forEach(function(currentCarriage) {
-		currentCarriage.beacons.forEach(function(beacon) {
-			
-		})
+		if(currentCarriage.beacons != null) {
+			currentCarriage.beacons.forEach(function(beacon) {
+				if(bestBeacon.uuid == beacon.uuid) {
+					carriage = currentCarriage
+					bestInstalled = beacon
+				}
+				if(secondBeacon.uuid == beacon.uuid) {
+					secondInstalled = beacon
+				}
+			})
+		}
 	})
+
+	var offset = 0
+	if(bestInstalled != null) {
+		offset = bestInstalled.offset
+	}
+
+	if(bestInstalled != null && secondInstalled != null) {
+		offset = (bestInstalled.offset+secondInstalled.offset)/2
+	}
 
 
 	// upsert into db
 	tools.upsert(positionsDB, fb_id, function() {
 		return {
 			_id: fb_id,
-			"test": "test"
+			fb_name: fb_name,
+			location: {
+				carriage_id: carriage.id,
+				offset: offset,
+				deck: 1
+			}
 		}
 
-	}, function(err, result){
-		res.send({"status":"ok"})
+	}, function(err, result){})
+
+	positionsDB.find({"selector": {"_id": {"$gt":0}}}, function(err, result) {
+		var friends = result.docs
+		res.send({
+			train: train,
+			my_location: {
+				carriage_id: carriage.id,
+				offset: offset,
+				deck: 1
+			},
+			friends: friends
+		})
 	})
-
-
 })
