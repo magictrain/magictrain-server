@@ -1,0 +1,150 @@
+{
+		"id": "IC821",
+		"name": "IC821",
+		"destination": "Romanshorn",
+		"location": {
+  		"lat": 0,
+  		"lon": 0
+		},
+    "carriages":    [
+          {
+            "_id": "1feafd6b431c64e55c4b07c77d19db8f",
+            "_rev": "1-24b3fabd6c5d3f5ff076c04a5bd23444",
+            "id": "1694025",
+            "type": "A IC2000",
+            "klass": 1,
+            "decks": 2,
+            "is_locomotive": false
+          },
+          {
+            "_id": "01198aa3ec67c3cb5a09732d83fd7c4b",
+            "_rev": "1-2c2875ef9620010c9077f6bccf5313a2",
+            "id": "1694033",
+            "type": "A IC2000",
+            "klass": 1,
+            "decks": 2,
+            "is_locomotive": false
+          },
+          {
+            "_id": "8fddb3927b10169722c1ee0975158e00",
+            "_rev": "1-a56db3ac86af731891376257aaf3cff1",
+            "id": "1694034",
+            "type": "A IC2000",
+            "klass": 1,
+            "decks": 2,
+            "is_locomotive": false
+          },
+          {
+            "_id": "1feafd6b431c64e55c4b07c77d14bea2",
+            "_rev": "1-267e26b609abaf49dbd81c302c536a67",
+            "id": "2694029",
+            "type": "WRB IC2000",
+            "klass": 1,
+            "decks": 2,
+            "is_locomotive": false
+          },
+          {
+            "_id": "1feafd6b431c64e55c4b07c77d0a7d93",
+            "_rev": "1-d439319c6af1d46a6ec0cdd26e2141e4",
+            "id": "2694091",
+            "type": "B IC2000",
+            "klass": 2,
+            "decks": 2,
+            "is_locomotive": false
+          },
+          {
+            "_id": "8fddb3927b10169722c1ee09750b859d",
+            "_rev": "2-2bc5345c1c4eac60375c208fa608a2e8",
+            "id": "2694092",
+            "type": "B IC2000",
+            "klass": 2,
+            "decks": 2,
+            "is_locomotive": false,
+            "beacons": [
+              {
+                "uuid": "E7:0D:90:B4:F6:00",
+                "offset": 0
+              },
+              {
+                "uuid": "E9:BD:78:C7:02:01",
+                "offset": 6.6
+              },
+              {
+                "uuid": "E9:1E:5A:A3:F0:56",
+                "offset": 13.2
+              },
+              {
+                "uuid": "CC:14:78:0B:FD:3E",
+                "offset": 19.4
+              },
+              {
+                "uuid": "FB:6A:9C:C1:71:CA",
+                "offset": 26.4
+              }
+            ]
+          },
+          {
+            "_id": "01198aa3ec67c3cb5a09732d83f30fbc",
+            "_rev": "2-19d5ad31ad3899a1fdf780dcb1fdaf1e",
+            "id": "2694099",
+            "type": "B IC2000",
+            "klass": 2,
+            "decks": 2,
+            "is_locomotive": false
+          },
+          {
+            "_id": "1feafd6b431c64e55c4b07c77d103113",
+            "_rev": "1-7bd4f7c965d32f2d49007c59b3660f5b",
+            "id": "2694116",
+            "type": "B IC2000",
+            "klass": 2,
+            "decks": 2,
+            "is_locomotive": false
+          },
+          {
+            "_id": "8fddb3927b10169722c1ee09750f3dc9",
+            "_rev": "1-4c7b5aa29bfd9f7dc7ffc7aad6934fc0",
+            "id": "2694124",
+            "type": "B IC2000",
+            "klass": 2,
+            "decks": 2,
+            "is_locomotive": false
+          },
+          {
+            "_id": "01198aa3ec67c3cb5a09732d83f8139d",
+            "_rev": "1-e197a941001aae0ac6517431688687e7",
+            "id": "2694140",
+            "type": "B IC2000",
+            "klass": 2,
+            "decks": 2,
+            "is_locomotive": false
+          },
+          {
+            "_id": "8fddb3927b10169722c1ee097504a693",
+            "_rev": "2-5083f68fa81e2123891edded40972fb2",
+            "id": "2694911",
+            "type": "BT IC2000",
+            "klass": 2,
+            "decks": 2,
+            "is_locomotive": false
+          },
+          {
+            "_id": "373f83d9960693ac210d3e34cb017dee",
+            "_rev": "1-f95679d5648aa658aeba9d248cb1f75f",
+            "id": "460-001",
+            "type": "Re 460",
+            "klass": 0,
+            "decks": 1,
+            "is_locomotive": true
+          },
+          {
+            "_id": "8fddb3927b10169722c1ee09751974a9",
+            "_rev": "1-f22cf0d9b2d707eef163ba0a017a40f6",
+            "id": "8694010",
+            "type": "AD IC2000",
+            "klass": 1,
+            "decks": 2,
+            "is_locomotive": false
+          }
+        ]
+}
